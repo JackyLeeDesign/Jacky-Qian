@@ -1,0 +1,242 @@
+/* -----------------------------------------------*/
+/* ALL( Screen 套用以下CSS )-----------------------*/
+/* -----------------------------------------------*/
+
+/*----- position -----*/
+
+.pl5 {
+  padding-left: 5%;
+}
+
+/*----- style -----*/
+.navbar-header img {
+  width: 100%;
+}
+.navbar {
+  border-bottom-style: solid;
+  border-bottom-color: #e0bfbf;
+  border-bottom-width: 3px;
+}
+.navbar-inverse {
+  background: white;
+}
+.navbar-default .navbar-brand {
+  font-family: "Nothing You Could Do", cursive;
+  font-weight: bold;
+}
+.navbar-default .navbar-nav > .active > a {
+  background-color: #eeeeee;
+}
+.navbar-inverse .navbar-nav > .active > a,
+.navbar-inverse .navbar-nav > .active > a:focus,
+.navbar-inverse .navbar-nav > .active > a:hover {
+  color: rgb(51, 51, 51);
+  background-color: #f2f2f2;
+}
+.navbar-inverse .navbar-nav > li > a:focus,
+.navbar-inverse .navbar-nav > li > a:hover {
+  color: rgb(51, 51, 51);
+}
+.navbar-inverse .navbar-collapse {
+  border-color: rgb(233, 205, 144);
+}
+.navbar-toggle {
+  background-color: #ebebeb;
+}
+.mainImg {
+  margin-top: 10%;
+  width: 60%;
+  margin-left: 20%;
+}
+.LovePic {
+  width: 100%;
+}
+.LovePic_diary {
+  width: 85%;
+  margin-left: 7.5%;
+}
+#myCarousel {
+  width: 50%;
+  margin-left: 25%;
+}
+.secImage {
+  margin-top: 5%;
+  width: 50%;
+  margin-left: 25%;
+}
+.wordPic {
+  width: 100%;
+}
+.hr_title {
+  border-color: rgb(233, 205, 144);
+}
+.image_box img {
+  width: 100%;
+}
+.tr_gray {
+  background: rgb(51, 51, 51);
+}
+.navbar-inverse .navbar-nav > .open > a,
+.navbar-inverse .navbar-nav > .open > a:focus,
+.navbar-inverse .navbar-nav > .open > a:hover {
+  color: rgb(51, 51, 51);
+  background-color: rgb(212, 168, 168);
+}
+.navbar-inverse .navbar-nav .open .dropdown-menu > li > a:focus,
+.navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover {
+  color: rgb(51, 51, 51);
+}
+.navbar {
+  margin-bottom: 0;
+  border-radius: 0;
+}
+.panel {
+  word-break: break-all;
+}
+#ShowDate {
+  font-family: "Nothing You Could Do", cursive;
+  font-weight: bold;
+  font-size: 30px;
+  margin-top: 30%;
+}
+.fontgood {
+  font-family: "Reenie Beanie", cursive;
+  font-size: 25px;
+  margin-top: 5%;
+}
+.fontwell {
+  font-family: "Indie Flower", cursive;
+  font-size: 18px;
+}
+#mymusic {
+  display: none;
+}
+#myPlaymp3 {
+  margin-top: 10px;
+  cursor: pointer;
+  color: rgb(51, 51, 51);
+}
+footer {
+  font-family: "Nothing You Could Do", cursive;
+  margin-top: 5%;
+  background-color: #f2f2f2;
+  padding: 25px;
+}
+.musicAnimate {
+  animation: musicAnimate 6s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+  -webkit-animation: musicAnimate 6s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-timing-function: linear;
+  -o-animation: musicAnimate 6s;
+  -o-animation-iteration-count: infinite;
+  -o-animation-fill-mode: forwards;
+  -o-animation-timing-function: linear;
+  -moz-animation: musicAnimate 6s;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-fill-mode: forwards;
+  -moz-animation-timing-function: linear;
+}
+@keyframes musicAnimate {
+  0% {
+    color: rgb(0, 0, 0);
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+  }
+  12.5% {
+    color: rgb(255, 35, 35);
+  }
+  25% {
+    color: rgb(250, 133, 0);
+  }
+  37.5% {
+    color: rgb(255, 230, 0);
+  }
+  50% {
+    color: rgb(73, 182, 0);
+  }
+  62.5% {
+    color: rgba(0, 21, 212, 0.867);
+  }
+  75% {
+    color: rgb(150, 0, 180);
+  }
+  87.5% {
+    color: rgb(87, 87, 87);
+  }
+  100% {
+    color: rgb(0, 0, 0);
+    transform: rotate(720deg);
+    -webkit-transform: rotate(720deg);
+    -o-transform: rotate(720deg);
+    -moz-transform: rotate(720deg);
+  }
+}
+.fa-book {
+  color: rgb(182, 163, 99);
+}
+.fa-pencil-alt {
+  color: rgb(190, 148, 129);
+}
+.fa-comments {
+  color: rgb(152, 161, 180);
+}
+.fa-music {
+  color: rgb(187, 160, 190);
+}
+
+/*color*/
+.logo_black {
+  color: #262626;
+}
+.logo_blue {
+  color: #4679bc;
+}
+.logo_yellow {
+  color: #e8d02e;
+}
+.logo_orange {
+  color: #d87c17;
+}
+
+/* -----------------------------------------------*/
+/* PAD(Screen >= 768px 套用以下CSS)---------------*/
+/* -----------------------------------------------*/
+@media (min-width: 768px) {
+}
+
+/* -----------------------------------------------*/
+/* SMALL_PAD(Screen <= 767px 套用以下CSS)----------*/
+/* -----------------------------------------------*/
+@media (max-width: 768px) {
+  #ShowDate {
+    margin-left: 20%;
+  }
+}
+
+/* -----------------------------------------------*/
+/* PHONE( Screen <= 480px 套用以下CSS )------------*/
+/* -----------------------------------------------*/
+@media (max-width: 480px) {
+  .mainImg {
+    margin-top: 18%;
+    width: 95%;
+    margin-left: 2.5%;
+  }
+  .secImage {
+    margin-top: 5%;
+    width: 90%;
+    margin-left: 5%;
+  }
+}
+
+/* -----------------------------------------------*/
+/* SMALL_PHONE( Screen <= 360px 套用以下CSS )------*/
+/* -----------------------------------------------*/
+@media screen and (max-width: 360px) {
+}

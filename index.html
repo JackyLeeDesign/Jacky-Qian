@@ -1,0 +1,411 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Jacky & Qian</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta property="og:title" content="Jacky & Qian" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://jackyqian.epizy.com/" />
+    <meta property="og:image" content="image/apple.jpg" />
+    <meta property="og:description" content="𒍝 𒂊 𒆠 𒉘 𒈬 ♥" />
+
+    <!-- bootstrap.css -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Nothing+You+Could+Do"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Reenie+Beanie"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Indie+Flower"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+      integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/font-awesome-animation.css" />
+
+    <!-- 櫻花特效CSS -->
+    <link
+      type="text/css"
+      rel="stylesheet"
+      media="screen"
+      href="js/sakura/jquery-sakura.css"
+    />
+
+    <!-- 計時器 -->
+    <link
+      type="text/css"
+      rel="stylesheet"
+      media="screen"
+      href="js/jquery.timers-1.2.js"
+    />
+
+    <!-- css -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/JackyLee.css" />
+
+    <!--jq & bootstrap.js-->
+    <script>
+      //引用'http'模組
+      const http = require("http");
+
+      //設定server網址，因為在本機端測試，所以輸入127.0.0.1
+      //const hostname = '127.0.0.1'  //上傳至伺服器需拿掉
+
+      //port 號會由 Heroku 給予，因此不再自行指定
+      const port = process.env.PORT || 3000;
+
+      //新增一個server並指定他的頁面資訊，內容為'Hello World!'
+      const server = http.createServer((req, res) => {
+        res.statusCode = 200;
+        res.setHeader("Content-Type", "text/plain");
+        res.end("Hello World!\n");
+      });
+
+      //監聽得到的 port 號開啟
+      server.listen(port, () => console.log(`Listening on ${port}`));
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  </head>
+
+  <body>
+    <nav id="top_bar" class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button
+            type="button"
+            class="navbar-toggle"
+            data-toggle="collapse"
+            data-target="#myNavbar"
+          >
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Jacky & Qian </a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a
+                ><i
+                  id="myPlaymp3"
+                  class="fas fa-headphones"
+                  onclick="PlayTF();"
+                ></i
+              ></a>
+            </li>
+            <!--if(click) class change to => fas fa-headphones faa-spin animated-->
+            <audio controls loop id="mymusic">
+              <source
+                src="https://drive.google.com/u/0/uc?id=11kq7eJXwgfCoj4p5kmPX0xHf5GgfaDsh&export=download"
+                type="audio/mpeg"
+              />
+            </audio>
+          </ul>
+          <ul class="nav navbar-nav">
+            <li class="active">
+              <a href="#section1"><i class="fas fa-pencil-alt"></i> Diary</a>
+            </li>
+            <li class="">
+              <a href="#section2"><i class="fas fa-book"></i> Story</a>
+            </li>
+            <li class="active">
+              <a href="#section4"><i class="fas fa-comments"></i> Dictionary</a>
+            </li>
+            <li class="">
+              <a
+                href="https://www.youtube.com/watch?v=nVCTGPcsgPI&list=PL4aaemyxslCAv_eWoJwy_icm3qxiYGIvS&index=39"
+              >
+                <i class="fas fa-music"></i> Music</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div id="section1"></div>
+    <!--此div為高度將其設定為導覽列的高度，目的為不讓導覽列因fixed屬性導致進入網頁時遮住頂部資料-->
+    <div id="div_TopHeightCount"></div>
+    <!---->
+    <div class="container">
+      <div class="page-header">
+        <p class="fontgood ml20">
+          <i class="fas fa-pencil-alt faa-tada animated"></i> It is always
+          morning somewhere in the world.
+        </p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="col-sm-6">
+        <div class="mainImg">
+          <img class="LovePic" src="image/tree.png" />
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div id="ShowDate"></div>
+      </div>
+    </div>
+    <div id="section2" class="container">
+      <div class="page-header">
+        <p class="fontgood ml20 mt10">
+          <i class="fas fa-book faa-tada animated"></i> Walking in the boundless
+          huge crowd, like a fish cannot turn back.
+        </p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="col-sm-12">
+        <div class="mainImg">
+          <img class="LovePic" src="image/story.png" />
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="col-sm-12">
+        <div class="mainImg">
+          <div class="pl5 pr5 fontwell" style="margin-bottom: 10px;">
+            2018 - 12 - 30
+          </div>
+          <img class="LovePic_diary img-rounded" src="image/20181230.jpg" />
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="col-sm-12">
+        <div class="mainImg">
+          <div class="pl5 pr5 fontwell" style="margin-bottom: 10px;">
+            2019 - 02 - 14
+          </div>
+          <img class="LovePic_diary img-rounded" src="image/20190214.jpg" />
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="col-sm-12">
+        <div class="mainImg">
+          <div class="pl5 pr5 fontwell" style="margin-bottom: 10px;">
+            2019 - 02 - 18
+          </div>
+          <img class="LovePic_diary img-rounded" src="image/20190218.jpg" />
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="col-sm-12">
+        <div class="mainImg">
+          <div class="pl5 pr5 fontwell" style="margin-bottom: 10px;">
+            2019 - 02 - 27
+          </div>
+          <img class="LovePic_diary img-rounded" src="image/20190227.jpg" />
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="col-sm-12">
+        <div class="mainImg">
+          <div class="pl5 pr5 fontwell" style="margin-bottom: 10px;">
+            2019 - 03 - 01
+          </div>
+          <img class="LovePic_diary img-rounded" src="image/20190301.jpg" />
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="col-sm-12">
+        <div class="mainImg">
+          <div class="pl5 pr5 fontwell" style="margin-bottom: 10px;">
+            2019 - 03 - 02
+          </div>
+          <img class="LovePic_diary img-rounded" src="image/20190302.jpg" />
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="col-sm-12">
+        <div class="mainImg">
+          <div class="pl5 pr5 fontwell" style="margin-bottom: 10px;">
+            2019 - 06 - 20
+          </div>
+          <img class="LovePic_diary img-rounded" src="image/20190805.jpg" />
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="col-sm-12">
+        <div class="mainImg">
+          <div class="pl5 pr5 fontwell" style="margin-bottom: 10px;">
+            2019 - 08 - 05
+          </div>
+          <img class="LovePic_diary img-rounded" src="image/angel.jpg" />
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="col-sm-12">
+        <div class="mainImg">
+          <div class="pl5 pr5 fontwell" style="margin-bottom: 10px;">
+            2019 - 08 - 27
+          </div>
+          <img class="LovePic_diary img-rounded" src="image/20190827.jpg" />
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="col-sm-12">
+        <div class="mainImg">
+          <div class="pl5 pr5 fontwell" style="margin-bottom: 10px;">
+            2020 - 04 - 13
+          </div>
+          <img class="LovePic_diary img-rounded" src="image/20200413.jpg" />
+        </div>
+      </div>
+    </div>
+
+    <div id="section4" class="container">
+      <div class="page-header">
+        <p class="fontgood ml20 mt10">
+          <i class="fas fa-comments faa-tada animated"></i> My power is to see
+          you every day and talk with you.
+        </p>
+      </div>
+    </div>
+    <div class="container text-center">
+      <div class="secImage">
+        <img class="wordPic" src="image/word.png" />
+      </div>
+    </div>
+    <footer class="container-fluid text-center">
+      <p class="gray">♥ By Jacky Lee</p>
+    </footer>
+
+    <script>
+      //補足頂部距離fixed時的空缺
+      var top_bar_height = window.document.getElementById("top_bar")
+        .offsetHeight;
+      var div_TopHeightCount = window.document.getElementById(
+        "div_TopHeightCount"
+      );
+      div_TopHeightCount.style.height = top_bar_height + "px";
+
+      //自製小型音樂撥放器
+      function PlayTF() {
+        var myPlaymp3 = window.document.getElementById("myPlaymp3");
+        var mymusic = window.document.getElementById("mymusic");
+        if (myPlaymp3.classList.contains("musicAnimate")) {
+          //播放中
+          myPlaymp3.classList.remove("musicAnimate");
+          mymusic.pause();
+        } else {
+          //未播放
+          myPlaymp3.classList.add("musicAnimate");
+          mymusic.play();
+        }
+      }
+
+      //櫻花特效
+      $(function () {
+        $("body").sakura();
+      });
+    </script>
+    <script src="js/sakura/jquery-sakura.js"></script>
+
+    <!-- 計算距離指定日期 的 時間計數器 -->
+    <script>
+      setInterval(startTime, 1000);
+      function startTime() {
+        // Set the unit values in milliseconds.
+        var msecPerMinute = 1000 * 60;
+        var msecPerHour = msecPerMinute * 60;
+        var msecPerDay = msecPerHour * 24;
+
+        // Set a date and get the milliseconds
+        var date = new Date();
+        var dateMsec = date.getTime();
+
+        // Set the date.
+        date.setYear(2018);
+        date.setMonth(9);
+        date.setDate(23);
+        date.setHours(0, 0, 0, 0);
+
+        // Get the difference in milliseconds.
+        var interval = dateMsec - date.getTime();
+
+        // Calculate how many days the interval contains. Subtract that
+        // many days from the interval to determine the remainder.
+        var days = Math.floor(interval / msecPerDay);
+        interval = interval - days * msecPerDay;
+
+        // Calculate the hours, minutes, and seconds.
+        var hours = Math.floor(interval / msecPerHour);
+        interval = interval - hours * msecPerHour;
+
+        var minutes = Math.floor(interval / msecPerMinute);
+        interval = interval - minutes * msecPerMinute;
+
+        var seconds = Math.floor(interval / 1000);
+
+        // Display the result.
+        document.getElementById("ShowDate").innerHTML =
+          days +
+          " Days, <br><br>" +
+          hours +
+          " Hours, " +
+          minutes +
+          " Minutes, " +
+          seconds +
+          " Seconds.";
+      }
+    </script>
+
+    <!-- 此為控制導覽列動畫的js (來源:bootstrap) -->
+    <script>
+      $(document).ready(function () {
+        // Add scrollspy to <body>
+        $("body").scrollspy({ target: ".navbar", offset: 50 });
+
+        // Add smooth scrolling on all links inside the navbar
+        $("#myNavbar a").on("click", function (event) {
+          // Make sure this.hash has a value before overriding default behavior
+          if (this.hash !== "") {
+            // Prevent default anchor click behavior
+            event.preventDefault();
+
+            // Store hash
+            var hash = this.hash;
+
+            // Using jQuery's animate() method to add smooth page scroll
+            // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+            $("html, body").animate(
+              {
+                scrollTop: $(hash).offset().top,
+              },
+              500,
+              function () {
+                // Add hash (#) to URL when done scrolling (default click behavior)
+                window.location.hash = hash;
+              }
+            );
+          } // End if
+        });
+      });
+    </script>
+  </body>
+</html>
