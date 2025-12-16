@@ -10,13 +10,11 @@
     <meta property="og:image" content="image/apple.jpg" />
     <meta property="og:description" content="𒍝 𒂊 𒆠 𒉘 𒈬 ♥" />
 
-    <!-- bootstrap.css -->
     <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
     />
 
-    <!-- Google Font -->
     <link
       href="https://fonts.googleapis.com/css?family=Nothing+You+Could+Do"
       rel="stylesheet"
@@ -30,7 +28,6 @@
       rel="stylesheet"
     />
 
-    <!-- Font Awesome -->
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
@@ -39,7 +36,6 @@
     />
     <link rel="stylesheet" href="css/font-awesome-animation.css" />
 
-    <!-- 櫻花特效CSS -->
     <link
       type="text/css"
       rel="stylesheet"
@@ -47,7 +43,6 @@
       href="js/sakura/jquery-sakura.css"
     />
 
-    <!-- 計時器 -->
     <link
       type="text/css"
       rel="stylesheet"
@@ -55,33 +50,32 @@
       href="js/jquery.timers-1.2.js"
     />
 
-    <!-- css -->
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/JackyLee.css" />
 
-    <!--jq & bootstrap.js-->
     <script>
       //引用'http'模組
       const http = require("http");
-
-      //設定server網址，因為在本機端測試，所以輸入127.0.0.1
-      //const hostname = '127.0.0.1'  //上傳至伺服器需拿掉
-
-      //port 號會由 Heroku 給予，因此不再自行指定
       const port = process.env.PORT || 3000;
-
-      //新增一個server並指定他的頁面資訊，內容為'Hello World!'
       const server = http.createServer((req, res) => {
         res.statusCode = 200;
         res.setHeader("Content-Type", "text/plain");
         res.end("Hello World!\n");
       });
-
-      //監聽得到的 port 號開啟
       server.listen(port, () => console.log(`Listening on ${port}`));
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    <style>
+      .carousel-inner > .item > img {
+        margin: 0 auto; /* 讓圖片在輪播中水平置中 */
+      }
+      .carousel-control.left, .carousel-control.right {
+        background-image: none; /* 移除預設的漸層背景，比較美觀 */
+      }
+    </style>
   </head>
 
   <body>
@@ -111,7 +105,6 @@
                 ></i
               ></a>
             </li>
-            <!--if(click) class change to => fas fa-headphones faa-spin animated-->
             <audio controls loop id="mymusic">
               <source
                 src="https://github.com/JackyLeeDesign/Jacky-Qian/raw/refs/heads/main/media/lovmu.mp3"
@@ -141,9 +134,7 @@
       </div>
     </nav>
     <div id="section1"></div>
-    <!--此div為高度將其設定為導覽列的高度，目的為不讓導覽列因fixed屬性導致進入網頁時遮住頂部資料-->
     <div id="div_TopHeightCount"></div>
-    <!---->
     <div class="container">
       <div class="page-header">
         <p class="fontgood ml20">
@@ -177,86 +168,138 @@
         </div>
       </div>
     </div>
+
     <div class="container">
       <div class="col-sm-12">
         <div class="mainImg">
           <div class="pl5 pr5 fontwell" style="margin-bottom: 10px;">
-            2018 - 12 - 30
+            2025 - 12 - 14
           </div>
-          <img class="LovePic_diary img-rounded" src="image/20181230.jpg" />
-        </div>
+          
+          <div id="myCarousel20251214-2" class="carousel slide" data-ride="carousel" data-interval="3000">
+            <ol class="carousel-indicators">
+              <li data-target="#myCarousel20251214-2" data-slide-to="0" class="active"></li>
+              <li data-target="#myCarousel20251214-2" data-slide-to="1"></li>
+              <li data-target="#myCarousel20251214-2" data-slide-to="2"></li>
+              <li data-target="#myCarousel20251214-2" data-slide-to="3"></li>
+            </ol>
+
+            <div class="carousel-inner">
+              <div class="item active">
+                <img class="LovePic_diary img-rounded" src="image/1214/2025121406.jpeg" alt="2025121406">
+              </div>
+
+              <div class="item">
+                <img class="LovePic_diary img-rounded" src="image/1214/2025121407.jpeg" alt="2025121407">
+              </div>
+            
+              <div class="item">
+                <img class="LovePic_diary img-rounded" src="image/1214/2025121408.jpeg" alt="2025121408">
+              </div>
+
+              <div class="item">
+                <img class="LovePic_diary img-rounded" src="image/1214/2025121409.jpeg" alt="2025121409">
+              </div>
+            </div>
+
+            <a class="left carousel-control" href="#myCarousel20251214-2" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel20251214-2" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+          </div>
       </div>
     </div>
+
     <div class="container">
       <div class="col-sm-12">
         <div class="mainImg">
           <div class="pl5 pr5 fontwell" style="margin-bottom: 10px;">
-            2019 - 02 - 14
+            2025 - 12 - 14
           </div>
-          <img class="LovePic_diary img-rounded" src="image/20190214.jpg" />
-        </div>
+          
+          <div id="myCarousel20251214-1" class="carousel slide" data-ride="carousel" data-interval="3000">
+            <ol class="carousel-indicators">
+              <li data-target="#myCarousel20251214-1" data-slide-to="0" class="active"></li>
+              <li data-target="#myCarousel20251214-1" data-slide-to="1"></li>
+              <li data-target="#myCarousel20251214-1" data-slide-to="2"></li>
+              <li data-target="#myCarousel20251214-1" data-slide-to="3"></li>
+              <li data-target="#myCarousel20251214-1" data-slide-to="4"></li>
+              <li data-target="#myCarousel20251214-1" data-slide-to="5"></li>
+            </ol>
+
+            <div class="carousel-inner">
+              <div class="item active">
+                <img class="LovePic_diary img-rounded" src="image/1214/2025121400.jpeg" alt="2025121400">
+              </div>
+
+              <div class="item">
+                <img class="LovePic_diary img-rounded" src="image/1214/2025121401.jpeg" alt="2025121401">
+              </div>
+            
+              <div class="item">
+                <img class="LovePic_diary img-rounded" src="image/1214/2025121402.jpeg" alt="2025121402">
+              </div>
+
+              <div class="item">
+                <img class="LovePic_diary img-rounded" src="image/1214/2025121403.jpeg" alt="2025121403">
+              </div>
+
+              <div class="item">
+                <img class="LovePic_diary img-rounded" src="image/1214/2025121404.jpeg" alt="2025121404">
+              </div>
+
+              <div class="item">
+                <img class="LovePic_diary img-rounded" src="image/1214/2025121405.jpeg" alt="2025121405">
+              </div>
+            </div>
+
+            <a class="left carousel-control" href="#myCarousel20251214-1" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel20251214-1" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+          </div>
       </div>
     </div>
+
     <div class="container">
       <div class="col-sm-12">
         <div class="mainImg">
           <div class="pl5 pr5 fontwell" style="margin-bottom: 10px;">
-            2019 - 02 - 18
+            2025 - 12 - 13
           </div>
-          <img class="LovePic_diary img-rounded" src="image/20190218.jpg" />
+          <img class="LovePic_diary img-rounded" src="image/20251213.png" />
+          
+          <div style="text-align: right; margin-top: 15px; margin-right: 8%;">
+             <a href="https://jackyleedesign.github.io/J-Q/" target="_blank" class="btn-story">
+              <i class="fas fa-book-open"></i> 閱讀繪本
+             </a>
+          </div>
+
         </div>
       </div>
     </div>
+
     <div class="container">
       <div class="col-sm-12">
         <div class="mainImg">
           <div class="pl5 pr5 fontwell" style="margin-bottom: 10px;">
-            2019 - 02 - 27
+            2020 - 04 - 13
           </div>
-          <img class="LovePic_diary img-rounded" src="image/20190227.jpg" />
+          <img class="LovePic_diary img-rounded" src="image/20200413.jpg" />
         </div>
       </div>
     </div>
-    <div class="container">
-      <div class="col-sm-12">
-        <div class="mainImg">
-          <div class="pl5 pr5 fontwell" style="margin-bottom: 10px;">
-            2019 - 03 - 01
-          </div>
-          <img class="LovePic_diary img-rounded" src="image/20190301.jpg" />
-        </div>
-      </div>
-    </div>
-    <div class="container">
-      <div class="col-sm-12">
-        <div class="mainImg">
-          <div class="pl5 pr5 fontwell" style="margin-bottom: 10px;">
-            2019 - 03 - 02
-          </div>
-          <img class="LovePic_diary img-rounded" src="image/20190302.jpg" />
-        </div>
-      </div>
-    </div>
-    <div class="container">
-      <div class="col-sm-12">
-        <div class="mainImg">
-          <div class="pl5 pr5 fontwell" style="margin-bottom: 10px;">
-            2019 - 06 - 20
-          </div>
-          <img class="LovePic_diary img-rounded" src="image/20190805.jpg" />
-        </div>
-      </div>
-    </div>
-    <div class="container">
-      <div class="col-sm-12">
-        <div class="mainImg">
-          <div class="pl5 pr5 fontwell" style="margin-bottom: 10px;">
-            2019 - 08 - 05
-          </div>
-          <img class="LovePic_diary img-rounded" src="image/angel.jpg" />
-        </div>
-      </div>
-    </div>
+
     <div class="container">
       <div class="col-sm-12">
         <div class="mainImg">
@@ -267,13 +310,91 @@
         </div>
       </div>
     </div>
+
     <div class="container">
       <div class="col-sm-12">
         <div class="mainImg">
           <div class="pl5 pr5 fontwell" style="margin-bottom: 10px;">
-            2020 - 04 - 13
+            2019 - 08 - 05
           </div>
-          <img class="LovePic_diary img-rounded" src="image/20200413.jpg" />
+          <img class="LovePic_diary img-rounded" src="image/angel.jpg" />
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="col-sm-12">
+        <div class="mainImg">
+          <div class="pl5 pr5 fontwell" style="margin-bottom: 10px;">
+            2019 - 06 - 20
+          </div>
+          <img class="LovePic_diary img-rounded" src="image/20190805.jpg" />
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="col-sm-12">
+        <div class="mainImg">
+          <div class="pl5 pr5 fontwell" style="margin-bottom: 10px;">
+            2019 - 03 - 02
+          </div>
+          <img class="LovePic_diary img-rounded" src="image/20190302.jpg" />
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="col-sm-12">
+        <div class="mainImg">
+          <div class="pl5 pr5 fontwell" style="margin-bottom: 10px;">
+            2019 - 03 - 01
+          </div>
+          <img class="LovePic_diary img-rounded" src="image/20190301.jpg" />
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="col-sm-12">
+        <div class="mainImg">
+          <div class="pl5 pr5 fontwell" style="margin-bottom: 10px;">
+            2019 - 02 - 27
+          </div>
+          <img class="LovePic_diary img-rounded" src="image/20190227.jpg" />
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="col-sm-12">
+        <div class="mainImg">
+          <div class="pl5 pr5 fontwell" style="margin-bottom: 10px;">
+            2019 - 02 - 18
+          </div>
+          <img class="LovePic_diary img-rounded" src="image/20190218.jpg" />
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="col-sm-12">
+        <div class="mainImg">
+          <div class="pl5 pr5 fontwell" style="margin-bottom: 10px;">
+            2019 - 02 - 14
+          </div>
+          <img class="LovePic_diary img-rounded" src="image/20190214.jpg" />
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="col-sm-12">
+        <div class="mainImg">
+          <div class="pl5 pr5 fontwell" style="margin-bottom: 10px;">
+            2018 - 12 - 30
+          </div>
+          <img class="LovePic_diary img-rounded" src="image/20181230.jpg" />
         </div>
       </div>
     </div>
@@ -326,7 +447,6 @@
     </script>
     <script src="js/sakura/jquery-sakura.js"></script>
 
-    <!-- 計算距離指定日期 的 時間計數器 -->
     <script>
       setInterval(startTime, 1000);
       function startTime() {
@@ -375,7 +495,6 @@
       }
     </script>
 
-    <!-- 此為控制導覽列動畫的js (來源:bootstrap) -->
     <script>
       $(document).ready(function () {
         // Add scrollspy to <body>
